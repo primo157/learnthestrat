@@ -39,7 +39,7 @@ Things that may still exist **only in the Vercel dashboard**, which I can't see.
 
 ## 2. What was done in Phase 0
 
-1. **Baseline tag.** `prod-baseline-2025-11-16` is an annotated tag on `b458d02`, the exact code currently on `main`.
+1. **Baseline tag.** `prod-baseline-2025-11-16` was created as an annotated tag on `b458d02`, the exact code currently on `main`. The work environment can push only the dev branch, so **the tag isn't on GitHub yet**. The owner creates it in §3 step 1. Until then, `main` itself still points at `b458d02` and is the same reference point.
 2. **Off-GitHub backups**, created in `backups/`. That folder is git-ignored and exists only in the work environment, so **the owner should keep their own copy**: see §3 for how to make one in 30 seconds.
    - `learnthestrat-prod-baseline.bundle` is a full git bundle of all history, verified with `git bundle verify`.
    - `learnthestrat-prod-baseline-b458d02.zip` is a zip of the production commit.
@@ -62,7 +62,11 @@ Things that may still exist **only in the Vercel dashboard**, which I can't see.
 
 These cover the parts of the safety net that live outside the repo and that I can't access.
 
-1. **Keep your own copy of the code.** On GitHub, go to Tags → `prod-baseline-2025-11-16` → *Download ZIP*, and store it somewhere outside GitHub (Drive, Dropbox, your computer).
+1. **Create the baseline tag and keep your own copy of the code.**
+   - On GitHub, go to **Releases → Draft a new release → Choose a tag**. Type `prod-baseline-2025-11-16`, choose "Create new tag on publish" and set the target to `main`.
+   - First confirm `main`'s latest commit is `b458d02`.
+   - Title it "Production baseline" and publish.
+   - Then click **Source code (zip)** on that release and store the file somewhere outside GitHub (Drive, Dropbox, your computer).
 2. **Record the Vercel production project.** Screenshot these pages for the current production project:
    - **Settings → General**: Framework, Root Directory, Build and Output settings, Node.js Version.
    - **Settings → Domains**: learnthestrat.com, `www`, and the redirect between them.
