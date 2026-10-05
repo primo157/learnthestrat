@@ -2,5 +2,8 @@
   "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "nodeVersion": "18.x"
+  "nodeVersion": "18.x",
+  "rewrites": [
+    { "source": "/catalyst", "destination": "/catalyst/index.html" }
+  ]
 }
